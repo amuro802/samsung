@@ -1,0 +1,32 @@
+@charset "utf-8";
+
+body,h1,h2,h3,h4,h5,h6,p{
+    margin: 0;
+}
+
+body{
+    min-width: 1200px;   /*최소(min) 가로값은 1200을 무조건 가지고 있어라(지켜라/보여주라)!!!!!/max-width 최대 1200만 가져라*/
+}
+
+ul{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+
+a{
+    color: #222;                            /*에이태그한테 직접컬러로 바꿔주야한다 백날 부모한테 컬러 바꿔도 안된다*/
+    text-decoration: none; 
+}
+
+.inner{
+    width: 1200px;          /* 블락에게 가로값을 주면 나머지는 다 마진으로 바뀐다*/
+    margin: 0 auto;
+}
+
+.cf::after{
+    content: "";
+    display: block;
+    clear: both;              /*부모한테 cf를 주야해*/
+}

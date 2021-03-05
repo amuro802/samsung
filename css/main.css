@@ -1,0 +1,183 @@
+@charset "utf-8";
+
+/*메인슬라이더*/
+
+.mainSlider{
+    height: 600px;                     /*사진을 앱솔루트를 띄어서 원래 이미지값으로 늘려주세요 다시 넣어주자*/          
+    overflow: hidden;                    /*나간거는 안보임처리 합시다*/
+    position: relative;            /*기준잡자*/
+}
+.mainSlider img{
+    position: absolute;
+    left: 50%;                                               /*이미지 중앙정렬*/
+    margin-left: -960px;            /*1920사이즈니까 땡겨주기 반!*/
+}
+
+
+.mainSlider ul{
+    position: absolute;         /*다같이 이쁘게 띄우자 li에 주면 다 겹쳐버려요     .mainSlider ul{}로해서 앱솔루트를 한번에 줘도 된다/물론 따로 Lbtn과 Rbtn한테 줘도된다*/
+}
+
+.mainSlider li{
+    float: left;
+}
+
+.mainSlider li a{
+    display: block;
+    text-indent: -9999px;
+    height: 100%;
+}
+
+
+.sliderLbtn{
+    left: 50%;
+    margin-left: -600px;      
+    bottom: 20px;
+}
+.sliderLbtn li{
+    height: 16px;
+    width: 16px;
+    background: url(../images/main/blet_visual.png) no-repeat; 
+    text-indent: -9999px;                                         /*화면밖으로 글자를 빼버림 물론 a태그도 빠짐 그러면 링크가 안걸려 a한테 블락을 주자*/   
+    margin-right: 5px;
+}
+.sliderLbtn li:first-child{
+    background-position: 0 -16px;
+}
+.sliderLbtn li a{}
+
+.sliderRbtn{
+    right: 50%;
+    bottom: 0;                                                /*렐라티브(기준)가 있으니 창 밑에 안붙어*/
+    margin-right: -600px;
+}
+.sliderRbtn li{
+    width: 45px;
+    height: 45px;
+    background: url(../images/main/btn_visual_cnt.png) no-repeat -46px 0;    /*백그라운드 속성도 같이 쓸수 있다*/
+    margin-left: 1px;
+}
+
+.sliderRbtn li:first-child{
+    background-position: 0 0;
+}
+
+.sliderRbtn li:last-child{background-position: -92px 0;}
+
+.sliderRbtn li a{}
+
+
+/*메인컨텐츠01*/
+
+.mainCon01{
+    background-color: #1397FE;            /*백그라운드컬러죠*/
+    color:#fff;                        /*컬러를 흰색으로 변경해야죠*/
+    padding: 50px 0;              /*세로 중앙정렬하기 위해서 넣었어요*/
+}
+
+.con01List{}
+.gridList li{                      /*원래는 con01List li였는데 con02List li도 주는것이 같기때문에 별도의 클래스명을 지어 밑에꺼는 삭제 몰아서 적었음*/
+    float: left;                  /* 부모한테 cf를 주야죠*/
+    width: 273px;                 /*1200 사이즈안에 273의 헤이트와 여백사이즈 36을 넣어서 딱 맞게 한다 하지만 마지막 박스의 여백때문에 마지막이 뚝떨어진다  */
+    margin-right: 36px;
+   
+}
+
+.gridList li:last-child{margin-right: 0;}      /*마지막에 박스의 여백을 빼야지 정렬이 깔끔하게 되죠*/
+.gridList li img{
+    width: 100%;
+    display: block;
+}
+
+.con01List li h3{
+    font-size: 20px;
+    font-weight: normal;           /*굵기가 좀 얇죠?*/
+}
+.con01List li a{}
+.con01List li a img{
+    width: 100%;         /*이것을 주야지 부모영역에 사진이 딱 맞아들어간다*/
+    margin: 10px 0;       /*폰트와 사이즈 사이에 여백을 주는거다*/
+}
+.con01List li p{         /*피태그가 에이태그안에 들어가있으니 여기서바꾼다 a태그에서 바뀌게 되면 또p태그가 고유의 컬러를 가지고 있어서*/
+    font-size: 11px;
+    color: #fff;
+}
+
+
+
+/*메인컨텐츠02*/
+
+.mainCon02{
+    background: url(../images/main/brandSite_bg.png)no-repeat center center;    /*백그라운드의 세로가로정렬는 센터센터*/ 
+    background-size:cover;                                                       /*풀로차게하는거 배경*/
+    text-align: center;
+    padding: 50px 0;
+}
+
+
+.con02List{
+    margin-top: 20px;
+}
+
+
+}
+.con02List li h4{
+    margin: 20px 0;
+}
+.con02List li h4 span{
+    font-size: 12px;
+}
+
+.viewBtn{
+    background: #263d92;             /*버튼 색*/
+    width: 130px;
+    margin: 0 auto;            /*박스를 중간으로 중간정렬*/
+    height: 40px;                /*버튼박스를 넓게*/
+    line-height: 40px;    
+    border-radius: 20px;   /*동그라미*/
+    letter-spacing: 2px;    /*글씨좌간*/
+}
+.viewBtn a{
+    color:#fff;
+    display: block;          /*라인헤이트를 주면 상속된다 그 밑에가 내려와버리니까!! 그러니까 버튼이 다잡혀*/
+}
+
+
+/*메인컨텐츠03*/
+
+.mainCon03{
+    padding: 50px 0;
+}
+.mainCon03 h2{
+    text-align: center;    /*부모한테 텍스트언라인줌 이미지한테 직접주면 양옆에 암것도 없기때문에 안돼*/
+    margin-bottom: 30px;
+}
+.mainCon03 h2 img{}
+
+.con03List{}
+.con03List li{
+    width: 376px;
+    box-shadow:0px 5px 10px rgba(0,0,0,0.2);             /*x값 y값 퍼지는정도 거리 색상 0은 검정 맨마지막은 투명도*/
+}
+
+
+
+.con03Info{
+    padding: 20px;      /*가로값을 주고 패딩을 주면 밖으로 나가버린다->가로값안주고 패딩을 주면 안에 들어간다*/
+}
+.con03Info h3{
+    text-shadow:5px 5px 10px rgba(0,0,0,0.2);          /*글씨한테 쉐도우를 준다*/
+}
+.con03Info p{
+    margin-bottom: 20px;
+    font-size: 13px;
+}
+
+.con03Info .viewBtn{
+    margin: 0;              /*왼쪽으로 가게함*/
+    text-align: center;        /*텍스트중앙정렬*/
+    background: #1c97fe;
+    width: 110px;
+
+}
+.con03Info .viewBtn a{}

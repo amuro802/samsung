@@ -1,0 +1,128 @@
+@charset "utf-8";
+
+/*헤더*/
+
+#header{
+    line-height: 28px;      /*라인헤이트는 할줄일때 세로중앙정렬가능 (행간조절) 28px인 이유는 이미지헤이트임 / 가령박스를 80px를 주고싶으면 라인헤이트도 80px로 정렬ok 근데 인라인만 가능*/
+    
+    border-bottom: 1px solid #e5e5e5;        /*선주기 솔리드는 직선*/
+    margin-bottom: 30px;
+    height: 80px;
+    line-height: 80px;
+}
+
+#header h1{
+    float: left;
+    
+}
+#header h1 a{}
+#header h1 a img{
+    
+}
+
+.gnb{
+    float: left;       /*부모한테 플루트를 주면 부모가 잡혀(굳이 cf를 얘네한테 줄 필요 없어) 그런데 헤더가 안잡혀 그러면 헤더한테 cf를 주야한다*/
+    font-size: 14px;       /*텍스트속성들은 부모한테 주면 그밑에 자식들이 상속받아*/
+    margin-left: 150px;
+    font-weight: bold;       /*텍스트속성들은 부모한테 주면 그밑에 자식들이 상속받아*/
+}
+.gnb li{
+    float: left;
+    margin-right: 28px;
+}
+.gnb li a{}
+
+
+/*lnb*/
+
+.lnb{
+    position: absolute;      /*렐라티브를 안줘도 안된다. 왜냐하면 li는 자기의 영역이 따로 있으니까*/
+    z-index: 1;
+    line-height: 30px;
+    font-size: 12px;
+    font-weight: normal;
+    display: none;   /*서브메뉴안보임처리*/
+    
+}
+
+.lnb li:hover a{      /*lib안에 li를 마우스로 갖다되면 그리고 a 태그를 선택한거다 a태그는 텍스트속성이 먹어요*/
+    color: #007cc0;
+}
+
+/*호버*/
+.gnb li:hover .lnb{       /*gnb에 li를 호버하면*/
+    display: block;     
+    
+}
+
+
+
+.langMenu{            
+    float: right;       /*부모한테 플루트를 주면 부모가 잡혀(굳이 cf를 얘네한테 줄 필요 없어) 그러면 헤더한테 cf를 주야한다 물론 각각(li)한테도 플루트 렙프트를 주야하죠 li한테 플루트라이트를 주면 순서가 바뀌어*/
+    font-size: 12px;
+}
+.langMenu li{
+    float: left;
+    margin-left: 10px;
+}
+.langMenu li a{}
+
+.langMenu .on a{
+    font-weight: bold;
+    color: #007cc0;
+}
+
+
+/*푸터*/
+
+#footer{
+    border-top: 1px solid #eee;
+    padding: 30px 0;
+}
+
+.fLogo{
+    float: left;
+    height: 100%;
+    line-height: 75px;
+
+        
+}
+.fLogo img{}
+
+.fInfo{
+    font-size:11px;
+    letter-spacing: -1px;
+    float: left;
+    color: #ccc;
+    margin-left: 30px;
+}
+.fMenu{
+    margin-bottom: 30px;
+    
+}
+.fMenu li{
+    float: left;
+}
+.fMenu li::after{
+    content: "";
+    display: inline-block;   /*박스를 만드면서 옆으로 붙는 인라인블락을 주자*/
+    width: 1px;
+    height: 8px;
+    background:#ccc;
+    margin: 0 5px;
+}
+.fMenu li:last-child::after{      /*순서가 중요하다*/
+    display: none;
+}
+.fMenu li a{                      /*에이태그여서 따로 컬러를 주자*/
+    color:#ccc;
+}
+.fInfo p{
+    
+}
+
+.waMark{
+    float: right;
+}
+.waMark a{}
+.waMark img{}
